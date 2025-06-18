@@ -78,4 +78,4 @@ def crear_estudiante():
     return render_template('crear.html', mensaje=mensaje)
 
 
-app.run(debug=True, port=5002)
+app.run()
