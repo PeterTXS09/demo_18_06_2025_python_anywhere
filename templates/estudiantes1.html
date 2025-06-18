@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Estudiantes</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for est in estudiantes %}
+        <tr>
+            <td>{{ est.DNI }}</td>
+            <td>{{ est.Nombre }}</td>
+            <td>{{ est.ApellidoPaterno }}</td>
+            <td>{{ est.ApellidoMaterno }}</td>
+            <td>
+                <form action="{{ url_for('eliminar_estudiante', dni=est.DNI) }}" method="post" onsubmit="return confirm('¿Estás seguro de eliminar a este estudiante?');">
+                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
