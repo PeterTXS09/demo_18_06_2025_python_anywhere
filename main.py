@@ -44,7 +44,7 @@ def eliminar_estudiante(dni):
     finally:
         conn.close() # cerrar la conexión
 
-    return redirect(url_for('form'))  # Asegúrate que este nombre coincide con tu ruta
+    return redirect(url_for('form'))
 
 
 @app.route('/crear', methods=['GET', 'POST'])
